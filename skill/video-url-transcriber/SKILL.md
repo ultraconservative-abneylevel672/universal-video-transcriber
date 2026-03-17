@@ -68,15 +68,18 @@ curl -s http://127.0.0.1:8099/transcribe \
 
 ## Optional auth-gated media
 
-If URL requires a logged-in browser session, pass browser cookies:
+Default policy: do **not** use browser cookies for public URLs.
+
+If and only if the user explicitly approves personal browser/session usage, pass browser cookies with explicit opt-in:
 
 ```bash
-python3 skill/video-url-transcriber/scripts/transcribe_url.py "<url>" --cookies-from-browser chrome
+python3 skill/video-url-transcriber/scripts/transcribe_url.py "<url>" --cookies-from-browser chrome --allow-personal-cookies
 ```
 
 ## Execution rules
 
 - Always normalize audio to mono 16k WAV before ASR.
+- Never use browser cookies/keychain data unless user explicitly asks for it.
 - Default `model_size` is `small`; raise to `medium`/`large-v3` only when user asks for higher quality.
 - Prefer `persist_media=false` unless user explicitly wants artifacts retained.
 - If transcription fails, return exact failing stage: `fetch`, `ffmpeg normalize`, or `asr`.

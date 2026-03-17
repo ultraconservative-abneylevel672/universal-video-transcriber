@@ -78,6 +78,11 @@ def main() -> int:
     parser.add_argument("--no-word-timestamps", action="store_true")
     parser.add_argument("--persist-media", action="store_true")
     parser.add_argument("--cookies-from-browser", default=None)
+    parser.add_argument(
+        "--allow-personal-cookies",
+        action="store_true",
+        help="Explicit opt-in for browser cookies (may prompt Keychain access).",
+    )
     parser.add_argument("--doctor", action="store_true")
 
     args = parser.parse_args()
@@ -87,6 +92,10 @@ def main() -> int:
 
     if not args.url:
         parser.error("url is required unless --doctor is used")
+    if args.cookies_from_browser and not args.allow_personal_cookies:
+        parser.error(
+            "--cookies-from-browser requires --allow-personal-cookies; default mode avoids personal browser/keychain data"
+        )
 
     try:
         from app.pipeline import transcribe_url
